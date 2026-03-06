@@ -19,70 +19,127 @@
 }
  
 /* NAVBAR */
-.nav-container{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 24px;
-  flex-wrap: wrap;       /* allows wrapping on small screens */
-  gap: 15px;             /* space between logo and links if wrapped */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(14,15,20,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
 }
 
-.logo{
-  font-weight:600;
-  font-size:1.1rem;
-  color:var(--primary);
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 20px;
 }
 
-.nav-links{
-  display:flex;
-  flex-wrap: wrap;       /* wrap links on small screens */
-  gap:20px;              /* smaller gap for mobile */
+/* Logo */
+.nav-container .logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--primary);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.nav-container .logo:hover {
+  transform: scale(1.05);
 }
 
-/* Nav links styling */
-.nav-links a{
-  text-decoration:none;
-  color:var(--primary);   /* force purple text */
-  font-weight:500;
-  transition:.3s;
-  display:inline-block;    /* ensures hover works consistently */
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+.nav-links a.active::after {
+  width: 100%;
 }
 
-.nav-links a:hover{
-  color:#884db1;           /* slightly darker purple on hover */
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: all 0.3s;
 }
 
-/* MOBILE RESPONSIVE */
+/* Mobile Menu Toggle */
+.nav-links.mobile-active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: rgba(14,15,20,0.95);
+  padding: 20px 0;
+  gap: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
 @media(max-width:768px){
-  .nav-container {
-    flex-direction: column;  /* stack logo and links vertically */
-    align-items: center;
-  }
   .nav-links {
+    display: none;
+    width: 100%;
     justify-content: center;
-    gap: 15px;
+    text-align: center;
   }
-  .nav-links a {
-    font-size: 0.95rem;      /* slightly smaller links on mobile */
+  .hamburger {
+    display: flex;
   }
 }
 
-.cv-btn:hover{
-  background:#6c3df5;
-  transform:translateY(-2px);
-}
-  /* NAVBAR */
-.navbar{
-  position:sticky;
-  top:0;
-  background:rgba(14,15,20,0.9);
-  backdrop-filter:blur(8px);
-  z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
 
 html{
   scroll-behavior:smooth;
@@ -91,7 +148,7 @@ html{
   max-width:1200px;
   margin:auto;
   display:flex;
-  justify-content:center;
+  justify-content: space-between;  /* logo left, hamburger right */
   gap:40px;
   padding:16px;
 }
@@ -377,12 +434,15 @@ h2{
  <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </div>
     <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#summary">Summary</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#summary" class="nav-link">Summary</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
   </div>
 </nav>
@@ -674,6 +734,32 @@ function toggleExtra(btn) {
     btn.textContent = "See Less ▲";
   }
 }
+
+// Hamburger toggle
+function toggleMenu(el){
+  const nav = document.querySelector('.nav-links');
+  nav.classList.toggle('mobile-active');
+  el.classList.toggle('active');
+}
+
+// Scroll active link & close mobile menu on click
+const navLinks = document.querySelectorAll('.nav-link');
+const hamburger = document.querySelector('.hamburger');
+const navLinksContainer = document.querySelector('.nav-links');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // Set active class
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+
+    // Close mobile menu if open
+    if(navLinksContainer.classList.contains('mobile-active')){
+      navLinksContainer.classList.remove('mobile-active');
+      hamburger.classList.remove('active');
+    }
+  });
+});
 </script>
 
 
