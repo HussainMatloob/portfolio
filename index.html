@@ -1,767 +1,876 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hussain Matloob | Flutter Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hussain Matloob | Flutter Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
- /* For Summery*/ 
-.summary-text{
-  max-width:850px;
-  margin:auto;
-  color:var(--muted);
-  text-align:justify;
- font-size:1.05rem;
-  line-height:1.9;
-}
- 
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background: rgba(14,15,20,0.7);
-  backdrop-filter: blur(10px);
-  z-index: 999;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  transition: all 0.3s ease;
-}
+  <style>
+    /* For Summery*/
+    .summary-text {
+      max-width: 850px;
+      margin: auto;
+      color: var(--muted);
+      text-align: justify;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-  gap: 20px;
-}
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(14, 15, 20, 0.7);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
 
-/* Logo */
-.nav-container .logo {
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--primary);
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.nav-container .logo:hover {
-  transform: scale(1.05);
-}
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      gap: 20px;
+    }
 
-/* Links */
-.nav-links {
-  display: flex;
-  gap: 30px;
-}
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: all 0.3s ease;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width 0.3s ease;
-}
-.nav-links a:hover::after {
-  width: 100%;
-}
-.nav-links a.active {
-  color: var(--primary);
-  font-weight: 600;
-}
-.nav-links a.active::after {
-  width: 100%;
-}
+    /* Logo */
+    .nav-container .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background: var(--primary);
-  border-radius: 2px;
-  transition: all 0.3s;
-}
+    .nav-container .logo:hover {
+      transform: scale(1.05);
+    }
 
-/* Mobile Menu Toggle */
-.nav-links.mobile-active {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  width: 100%;
-  background: rgba(14,15,20,0.95);
-  padding: 20px 0;
-  gap: 20px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
+    /* Links */
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
 
-/* Hamburger animation when active */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
 
-/* Responsive */
-@media(max-width:768px){
-  .nav-links {
-    display: none;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-  .hamburger {
-    display: flex;
-  }
-}
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
 
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-html{
-  scroll-behavior:smooth;
-}
-.nav-container{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content: space-between;  /* logo left, hamburger right */
-  gap:40px;
-  padding:16px;
-}
+    .nav-links a.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
 
-.nav-container a{
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:500;
-  transition:.3s;
-}
+    .nav-links a.active::after {
+      width: 100%;
+    }
 
-.nav-container a:hover{
-  color:var(--primary);
-}
-:root {
-  --bg: #0e0f14;
-  --card: #171a23;
-  --primary: #7c4dff;
-  --secondary: #4dd0e1;
-  --text: #e6e6eb;
-  --muted: #9aa0b3;
-}
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box}
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
 
-body{
-  font-family:'Poppins',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-  overflow-x:hidden;
-}
+    /* Mobile Menu Toggle */
+    .nav-links.mobile-active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: rgba(14, 15, 20, 0.95);
+      padding: 20px 0;
+      gap: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-section{
-  max-width:1200px;
-  margin:auto;
-  padding:60px 24px;
-}
+    /* Hamburger animation when active */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
 
-h2{
-  text-align:center;
-  font-size:2rem;
-  margin-bottom:40px;
-}
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
 
-/* HERO */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;       /* center content horizontally */
-  gap: 50px;                     /* space between image and text */
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
 
-/* Profile image */
-.hero-img {
-  width: 220px;                  /* slightly smaller for professional look */
-  height: 220px;
-  border-radius: 50%;            /* make it circular */
-  border: 3px solid var(--primary);
-  object-fit: cover;
-  flex-shrink: 0;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* subtle shadow */
- 
-}
+    /* Responsive */
+    @media(max-width:768px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
 
-/* Hero text */
-.hero-text {
-  flex: 1;
-  min-width: 250px;
-  max-width: 600px;
-}
-
-/* Headings */
-.hero-text h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
-.hero-text h1 span {
-  color: var(--primary);
-}
-
-.hero-text h3 {
-  color: var(--secondary);
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-
-.hero-text p {
-  color: var(--muted);
-  line-height: 1.7;
-  font-size: 1.05rem;
-}
-
-/* Animation */
-.hero.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero-text h1,
-.hero-text h3,
-.hero-text p {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.hero.show .hero-text h1 {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
-}
-
-.hero.show .hero-text h3 {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.4s;
-}
-
-.hero.show .hero-text p {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.6s;
-}
+      .hamburger {
+        display: flex;
+      }
+    }
 
 
+    html {
+      scroll-behavior: smooth;
+    }
 
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      /* logo left, hamburger right */
+      gap: 40px;
+      padding: 16px;
+    }
 
-/* SKILLS */
-.skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   
-}
+    .nav-container a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: .3s;
+    }
 
-.skill-card {
-  background: var(--card);
-  padding: 25px;
-  border-radius: 16px;
-  margin: 10px; /* adds space around each card */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth animation */
-}
+    .nav-container a:hover {
+      color: var(--primary);
+    }
 
-/* Hover animation */
-.skill-card:hover {
-  transform: scale(1.05); /* slightly enlarge */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35); /* subtle shadow */
-  cursor: pointer;
-}
+    :root {
+      --bg: #0e0f14;
+      --card: #171a23;
+      --primary: #7c4dff;
+      --secondary: #4dd0e1;
+      --text: #e6e6eb;
+      --muted: #9aa0b3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 24px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      /* center content horizontally */
+      gap: 50px;
+      /* space between image and text */
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Profile image */
+    .hero-img {
+      width: 220px;
+      /* slightly smaller for professional look */
+      height: 220px;
+      border-radius: 50%;
+      /* make it circular */
+      border: 3px solid var(--primary);
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      /* subtle shadow */
+
+    }
+
+    /* Hero text */
+    .hero-text {
+      flex: 1;
+      min-width: 250px;
+      max-width: 600px;
+    }
+
+    /* Headings */
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 span {
+      color: var(--primary);
+    }
+
+    .hero-text h3 {
+      color: var(--secondary);
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* Animation */
+    .hero.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-text h1,
+    .hero-text h3,
+    .hero-text p {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .hero.show .hero-text h1 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.2s;
+    }
+
+    .hero.show .hero-text h3 {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.4s;
+    }
+
+    .hero.show .hero-text p {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.6s;
+    }
 
 
 
-/* PROJECTS */
-.projects{display:flex;flex-direction:column}
 
-.project-card {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 20px;
-  margin: 20px 0;
-  box-shadow: 0 8px 20px rgba(0,0,0,.35);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-   transition: transform .3s ease, box-shadow .3s ease;
-}
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
-.project-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 35px rgba(0,0,0,.45);
-}
+    }
 
-.project-card h3 { color: var(--secondary); }
-.project-card p { color: var(--muted); }
+    .skill-card {
+      background: var(--card);
+      padding: 25px;
+      border-radius: 16px;
+      margin: 10px;
+      /* adds space around each card */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* smooth animation */
+    }
 
-.project-card .main-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.08);
-}
-
-.project-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-
-.extra-images {
-  display: none;
-  margin-top: 15px;
-}
-
-.project-images {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding: 10px;
-}
-
-.project-images img {
-  height: 200px;
-  border-radius: 12px;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.project-images img:hover {
-  transform: scale(1.05);
-}
-
-/* All buttons */
-.cv-btn, .see-more-btn {
-  background: var(--primary);
-  color: #fff;            /* White text for contrast */
-  border: none;
-  border-radius: 30px;
-  padding: 8px 18px;
-  font-weight: 500;
-  text-decoration: none;  /* removes underline from <a> */
-  display: inline-block;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-/* Hover effect */
-.cv-btn:hover, .see-more-btn:hover {
-  background: #884db1;    /* slightly darker purple for hover */
-  color: #fff;
-  transform: translateY(-2px);
-}
+    /* Hover animation */
+    .skill-card:hover {
+      transform: scale(1.05);
+      /* slightly enlarge */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      /* subtle shadow */
+      cursor: pointer;
+    }
 
 
-/* Landscape images */
-.project-images img.landscape {
-  width: auto;         /* auto width to preserve ratio */
-  height: 320px;       /* match height of other images */
-  object-fit: cover;   /* crop if needed */
-  display: block;
-  margin: 0 auto;      /* center horizontally if narrower than container */
-}
 
-.project-images img:hover{transform:scale(1.05)}
+    /* PROJECTS */
+    .projects {
+      display: flex;
+      flex-direction: column
+    }
 
-/* EXPERIENCE */
-.timeline{display:flex;flex-direction:column}
-.timeline-item{
-  background:var(--card);
-  padding:28px;
-  border-radius:16px;
-  margin:15px 0;
-}
-.timeline-item p{color:var(--muted)}
+    .project-card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .35);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
 
-/* CONTACT */
-.contact{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  text-align:center;
-}
-.contact a{color:var(--text);text-decoration:none}
-.contact a:hover{color:var(--primary)}
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, .45);
+    }
 
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .hero{flex-direction:column;text-align:center}
-  .hero img{max-width:250px}
-}
-</style>
+    .project-card h3 {
+      color: var(--secondary);
+    }
+
+    .project-card p {
+      color: var(--muted);
+    }
+
+    .project-card .main-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .project-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .extra-images {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .project-images {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 10px;
+    }
+
+    .project-images img {
+      height: 200px;
+      border-radius: 12px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+
+    /* All buttons */
+    .cv-btn,
+    .see-more-btn {
+      background: var(--primary);
+      color: #fff;
+      /* White text for contrast */
+      border: none;
+      border-radius: 30px;
+      padding: 8px 18px;
+      font-weight: 500;
+      text-decoration: none;
+      /* removes underline from <a> */
+      display: inline-block;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    /* Hover effect */
+    .cv-btn:hover,
+    .see-more-btn:hover {
+      background: #884db1;
+      /* slightly darker purple for hover */
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+
+    /* Landscape images */
+    .project-images img.landscape {
+      width: auto;
+      /* auto width to preserve ratio */
+      height: 320px;
+      /* match height of other images */
+      object-fit: cover;
+      /* crop if needed */
+      display: block;
+      margin: 0 auto;
+      /* center horizontally if narrower than container */
+    }
+
+    .project-images img:hover {
+      transform: scale(1.05)
+    }
+
+    /* EXPERIENCE */
+    .timeline {
+      display: flex;
+      flex-direction: column
+    }
+
+    .timeline-item {
+      background: var(--card);
+      padding: 28px;
+      border-radius: 16px;
+      margin: 15px 0;
+    }
+
+    .timeline-item p {
+      color: var(--muted)
+    }
+
+    /* CONTACT */
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .contact a {
+      color: var(--text);
+      text-decoration: none
+    }
+
+    .contact a:hover {
+      color: var(--primary)
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px) {
+      .hero {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .hero img {
+        max-width: 250px
+      }
+    }
+  </style>
 </head>
 
 <body>
 
- <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="hamburger" onclick="toggleMenu(this)">
-      <span></span><span></span><span></span>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#summary" class="nav-link">Summary</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
     </div>
-    <div class="nav-links">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#summary" class="nav-link">Summary</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <img src="images/profile.jpeg" alt="Hussain Matloob" class="hero-img">
+    <div class="hero-text">
+      <h1>Hussain <span>Matloob</span></h1>
+      <h3>Flutter Developer</h3>
+      <p>
+        Flutter Developer specializing in building scalable and production-ready
+        mobile applications using Flutter, Dart, Firebase, and modern state
+        management solutions.
+      </p>
     </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <img src="images/profile.jpeg" alt="Hussain Matloob" class="hero-img">
-  <div class="hero-text">
-    <h1>Hussain <span>Matloob</span></h1>
-    <h3>Flutter Developer</h3>
-   <p>
-Flutter Developer specializing in building scalable and production-ready
-mobile applications using Flutter, Dart, Firebase, and modern state
-management solutions.
-</p>
-  </div>
-</section>
+  </section>
 
 
-<!-- SUMMARY -->
-<section id="summary">
-<h2>Professional Summary</h2>
+  <!-- SUMMARY -->
+  <section id="summary">
+    <h2>Professional Summary</h2>
 
-<p class="summary-text">
-Flutter Developer with hands-on experience building scalable mobile
-applications using Flutter and Dart. Skilled in state management
-solutions including GetX, Provider, and Bloc, and experienced in
-integrating REST APIs and Firebase services.
+    <p class="summary-text">
+      Flutter Developer with hands-on experience building scalable mobile
+      applications using Flutter and Dart. Skilled in state management
+      solutions including GetX, Provider, and Bloc, and experienced in
+      integrating REST APIs and Firebase services.
 
-I focus on writing clean, maintainable code and building performant
-applications with intuitive user interfaces. My experience includes
-developing production-ready apps, implementing complex UI flows,
-and deploying applications to the Google Play Store.
-</p>
+      I focus on writing clean, maintainable code and building performant
+      applications with intuitive user interfaces. My experience includes
+      developing production-ready apps, implementing complex UI flows,
+      and deploying applications to the Google Play Store.
+    </p>
 
-</section>
- 
+  </section>
 
-<!-- SKILLS -->
-<section id="skills" class="fade-up">
-<h2>Technical Skills</h2>
-<div class="skills">
-  <div class="skill-card">Flutter & Dart | Strong OOP | MVC | MVVM | GetX | Provider | Bloc</div>
-  <div class="skill-card">REST APIs | GraphQL | WebSockets | Deep Linking</div>
-  <div class="skill-card">Internationalization | Localization (l10n)</div>
-  <div class="skill-card">Firebase | Auth | Firestore | Realtime Database | Storage</div>
-  <div class="skill-card">Google Maps API | Push Notifications | Stripe | AdMob</div>
-  <div class="skill-card">Laravel (CRUD APIs) | SQL (XAMPP)</div>
-  <div class="skill-card">Google Play & App Store Deployment | Release Management</div>
-  <div class="skill-card">Version Control | Git | GitHub | GitFlow</div>
-</div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Key Projects</h2>
-  <div class="projects">
+  <!-- SKILLS -->
+  <section id="skills" class="fade-up">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <div class="skill-card">Flutter & Dart | OOP | MVC | MVVM | GetX | Provider | Bloc</div>
+      <div class="skill-card">REST APIs | GraphQL | WebSockets | Deep Linking</div>
+      <div class="skill-card">Internationalization | Localization (l10n)</div>
+      <div class="skill-card">Firebase | Auth | Firestore | Realtime Database | Storage</div>
+      <div class="skill-card">Supabase | Auth | Edge Functions | Storage</div>
+      <div class="skill-card">Google Maps API | Push Notifications | Stripe | AdMob</div>
+      <div class="skill-card">Laravel (CRUD APIs) | SQL (XAMPP)</div>
+      <div class="skill-card">Google Play & App Store Deployment | Release Management</div>
+      <div class="skill-card">Version Control | Git | GitHub | GitFlow</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Key Projects</h2>
+    <div class="projects">
+
+
+      <div class="project-card">
+        <h3>Love Connection App</h3>
+        <p>Marriage networking app with profiles and connection requests.</p>
+        <p><b>Tech:</b> Flutter • GetX • RESTful APIs</p>
+        <img src="images/projects/loveconnection/1.png" class="main-img">
+
+
+        <!-- Buttons -->
+        <div class="project-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.loveconnection.app" class="cv-btn" target="_blank">
+            loveConnection – Play Store</a>
+        </div>
+
+      </div>
+
+      <!-- Project Card Template -->
+      <div class="project-card">
+        <h3>GFCM Trading App</h3>
+        <p>Real-time trading app with charts and secure transactions.</p>
+        <p><b>Tech:</b> Flutter • GetX • RESTful APIs • WebSockets</p>
+
+        <!-- Main visible image -->
+        <img src="images/projects/gfcmTrading/1.png" class="main-img">
+
+        <!-- Buttons -->
+        <div class="project-buttons">
+          <a href="https://drive.google.com/file/d/1KV40ru5GXeZignP5WD18KAbXdUDvTBgR/view?usp=sharing" class="cv-btn"
+            target="_blank">Download APK</a>
+        </div>
+
+        <!-- Hidden extra images -->
+        <div class="extra-images">
+          <div class="project-images">
+            <img src="images/projects/gfcmTrading/1.png">
+            <img src="images/projects/gfcmTrading/2.png">
+            <img src="images/projects/gfcmTrading/3.png">
+            <img src="images/projects/gfcmTrading/4.png">
+            <img src="images/projects/gfcmTrading/5.png">
+            <img src="images/projects/gfcmTrading/6.png">
+            <img src="images/projects/gfcmTrading/7.png">
+            <img src="images/projects/gfcmTrading/8.png">
+            <img src="images/projects/gfcmTrading/9.png">
+            <img src="images/projects/gfcmTrading/10.png">
+            <img src="images/projects/gfcmTrading/11.png">
+          </div>
+        </div>
+
+        <!-- See More button -->
+        <button class="see-more-btn" onclick="toggleExtra(this)">See More ▼</button>
+      </div>
+
+      <!-- Repeat similar structure for other projects -->
+      <div class="project-card">
+        <h3>Ground Booking System</h3>
+        <p>Multi-role sports ground booking platform.</p>
+        <p><b>Tech:</b> Flutter • GetX • Firebase Database</p>
+        <img src="images/projects/groundSystem/1.png" class="main-img">
+        <!-- Buttons -->
+        <div class="project-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.techanion.groundbooking" class="cv-btn"
+            target="_blank">
+            User App – Play Store
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.techanion.bookingpartner" class="cv-btn"
+            target="_blank">
+            Partner App – Play Store
+          </a>
+        </div>
+        <div class="extra-images">
+          <div class="project-images">
+            <img src="images/projects/groundSystem/1.png">
+            <img src="images/projects/groundSystem/2.png">
+            <img src="images/projects/groundSystem/3.png">
+            <img src="images/projects/groundSystem/4.png">
+            <img src="images/projects/groundSystem/5.png">
+            <img src="images/projects/groundSystem/6.png">
+            <img src="images/projects/groundSystem/7.png">
+            <img src="images/projects/groundSystem/8.png">
+            <img src="images/projects/groundSystem/9.png">
+            <img src="images/projects/groundSystem/10.png">
+          </div>
+        </div>
+        <button class="see-more-btn" onclick="toggleExtra(this)">See More ▼</button>
+      </div>
+
+      <!-- WedPlan360 -->
+      <div class="project-card">
+        <h3>WedPlan360</h3>
+        <p>Wedding planning & expense management app.</p>
+        <p><b>Tech:</b> Flutter • GetX • Restful APIs • Localization l10n • Push Notifications</p>
+        <img src="images/projects/wedPlane360/1.png" class="main-img">
+        <div class="project-buttons">
+          <a href="https://drive.google.com/file/d/1i30Fs1av_E-cPNxZVkhyPm6-oiOEuv9L/view?usp=sharing" class="cv-btn"
+            target="_blank">Download APK</a>
+        </div>
+        <div class="extra-images">
+          <div class="project-images">
+            <img src="images/projects/wedPlane360/1.png">
+            <img src="images/projects/wedPlane360/2.png">
+            <img src="images/projects/wedPlane360/3.png">
+            <img src="images/projects/wedPlane360/4.png">
+            <img src="images/projects/wedPlane360/5.png">
+            <img src="images/projects/wedPlane360/6.png">
+            <img src="images/projects/wedPlane360/7.png">
+            <img src="images/projects/wedPlane360/8.png">
+          </div>
+        </div>
+        <button class="see-more-btn" onclick="toggleExtra(this)">See More ▼</button>
+      </div>
+
+      <!-- eSquadifi -->
+      <div class="project-card">
+        <h3>eSquadifi</h3>
+        <p>A gaming-focused social application.</p>
+        <p><b>Tech:</b> Flutter • GetX • Firebase Database</p>
+        <img src="images/projects/eSquadify/1.png" class="main-img">
+        <div class="project-buttons">
+          <a href="https://drive.google.com/file/d/1Xn4LLW8m-3vvoBDUtpJqvjeqtFqbL9Qe/view?usp=sharing" class="cv-btn"
+            target="_blank">Download APK</a>
+        </div>
+        <div class="extra-images">
+          <div class="project-images">
+            <img src="images/projects/eSquadify/1.png">
+            <img src="images/projects/eSquadify/2.png">
+            <img src="images/projects/eSquadify/3.png">
+            <img src="images/projects/eSquadify/4.png">
+            <img src="images/projects/eSquadify/5.png">
+            <img src="images/projects/eSquadify/6.png">
+            <img src="images/projects/eSquadify/7.png">
+            <img src="images/projects/eSquadify/8.png">
+            <img src="images/projects/eSquadify/9.png">
+            <img src="images/projects/eSquadify/10.png">
+            <img src="images/projects/eSquadify/11.png">
+            <img src="images/projects/eSquadify/12.png" class="landscape">
+            <img src="images/projects/eSquadify/13.png" class="landscape">
+          </div>
+        </div>
+        <button class="see-more-btn" onclick="toggleExtra(this)">See More ▼</button>
+      </div>
+
+      <!-- Snooker Management -->
+      <div class="project-card">
+        <h3>Snooker Management System</h3>
+        <p>
+          Multi-role snooker management system with Admin, Manager, and
+          Operator dashboards for managing tables, sessions, and billing.
+        </p>
+        <p><b>Tech:</b> Flutter • GetX • Firebase Database • GoRouter</p>
+
+        <img src="images/projects/snooker/1.JPG" class="main-img">
+
+        <div class="project-buttons">
+          <a href="https://snookerpartner.netlify.app" class="cv-btn" target="_blank">
+            Live Demo
+          </a>
+        </div>
+
+        <div class="extra-images">
+          <div class="project-images">
+            <img src="images/projects/snooker/1.JPG" class="landscape">
+            <img src="images/projects/snooker/3.JPG" class="landscape">
+            <img src="images/projects/snooker/2.JPG" class="landscape">
+          </div>
+        </div>
+
+        <button class="see-more-btn" onclick="toggleExtra(this)">
+          See More ▼
+        </button>
+      </div>
 
       <!-- Food Delivery -->
-    <div class="project-card">
-      <h3>Love Connection App</h3>
-      <p>Marriage networking app with profiles and connection requests.</p>
-      <img src="images/projects/loveconnection/1.png" class="main-img">
-    
+      <div class="project-card">
+        <h3>Food Delivery app</h3>
+        <p>Multi-role food delivery system with customer, rider, admin.</p>
+        <p><b>Tech:</b> Flutter • GetX • Firebase Database • Google Maps SDK</p>
+        <img src="images/projects/foodApp/1.JPG" class="main-img">
 
-      <!-- Buttons -->
-      <div class="project-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.loveconnection.app" class="cv-btn" target="_blank"> loveConnection – Play Store</a>
-      </div>
-
-    </div>
-
-    <!-- Project Card Template -->
-    <div class="project-card">
-      <h3>GFCM Trading App</h3>
-      <p>Real-time trading app with charts and secure transactions.</p>
-
-      <!-- Main visible image -->
-      <img src="images/projects/gfcmTrading/1.png" class="main-img">
-
-      <!-- Buttons -->
-      <div class="project-buttons">
-        <a href="https://drive.google.com/file/d/1KV40ru5GXeZignP5WD18KAbXdUDvTBgR/view?usp=sharing" class="cv-btn" target="_blank">Download APK</a>
-      </div>
-
-      <!-- Hidden extra images -->
-      <div class="extra-images">
-        <div class="project-images">
-          <img src="images/projects/gfcmTrading/1.png">
-          <img src="images/projects/gfcmTrading/2.png">
-          <img src="images/projects/gfcmTrading/3.png">
-          <img src="images/projects/gfcmTrading/4.png">
-          <img src="images/projects/gfcmTrading/5.png">
-          <img src="images/projects/gfcmTrading/6.png">
-          <img src="images/projects/gfcmTrading/7.png">
-          <img src="images/projects/gfcmTrading/8.png">
-          <img src="images/projects/gfcmTrading/9.png">
-          <img src="images/projects/gfcmTrading/10.png">
-          <img src="images/projects/gfcmTrading/11.png">
-        </div>
-      </div>
-
-      <!-- See More button -->
-      <button class="see-more-btn" onclick="toggleExtra(this)">See More ▼</button>
-    </div>
-
-    <!-- Repeat similar structure for other projects -->
-    <div class="project-card">
-      <h3>Ground Booking System</h3>
-      <p>Multi-role sports ground booking platform.</p>
-      <img src="images/projects/groundSystem/1.png" class="main-img">
         <!-- Buttons -->
-      <div class="project-buttons">
-      <a href="https://play.google.com/store/apps/details?id=com.techanion.groundbooking"
-       class="cv-btn" target="_blank">
-       User App – Play Store
-      </a>
-       <a href="https://play.google.com/store/apps/details?id=com.techanion.bookingpartner"
-       class="cv-btn" target="_blank">
-       Partner App – Play Store
-      </a>
-      </div>
-      <div class="extra-images">
-        <div class="project-images">
-          <img src="images/projects/groundSystem/1.png">
-          <img src="images/projects/groundSystem/2.png">
-          <img src="images/projects/groundSystem/3.png">
-          <img src="images/projects/groundSystem/4.png">
-          <img src="images/projects/groundSystem/5.png">
-          <img src="images/projects/groundSystem/6.png">
-          <img src="images/projects/groundSystem/7.png">
-          <img src="images/projects/groundSystem/8.png">
-          <img src="images/projects/groundSystem/9.png">
-          <img src="images/projects/groundSystem/10.png">
+        <div class="project-buttons">
+          <a href="https://drive.google.com/file/d/1gUUIP39iQqkiwSdbznwm6bKgctVtoAjU/view?usp=sharing" class="cv-btn"
+            target="_blank">
+            Food User App
+          </a>
+          <a href="https://drive.google.com/file/d/1N1ZD6Q85PWiHspFY1xjetrMVvJaM4FV4/view?usp=sharing" class="cv-btn"
+            target="_blank">
+            Food Delivery Boy App
+          </a>
         </div>
       </div>
-      <button class="see-more-btn" onclick="toggleExtra(this)">See More ▼</button>
-    </div>
 
-    <!-- WedPlan360 -->
-    <div class="project-card">
-      <h3>WedPlan360</h3>
-      <p>Wedding planning & expense management app.</p>
-      <img src="images/projects/wedPlane360/1.png" class="main-img">
-      <div class="project-buttons">
-        <a href="https://drive.google.com/file/d/1i30Fs1av_E-cPNxZVkhyPm6-oiOEuv9L/view?usp=sharing" class="cv-btn" target="_blank">Download APK</a>
-      </div>
-      <div class="extra-images">
-        <div class="project-images">
-          <img src="images/projects/wedPlane360/1.png">
-          <img src="images/projects/wedPlane360/2.png">
-          <img src="images/projects/wedPlane360/3.png">
-          <img src="images/projects/wedPlane360/4.png">
-          <img src="images/projects/wedPlane360/5.png">
-          <img src="images/projects/wedPlane360/6.png">
-          <img src="images/projects/wedPlane360/7.png">
-          <img src="images/projects/wedPlane360/8.png">
+      <!-- Covid tracker app -->
+      <div class="project-card">
+        <h3>Covid Tracker app</h3>
+        <p>COVID-19 tracker displaying real-time statistics by country.</p>
+        <p><b>Tech:</b> Flutter • GetX • Restful APIs</p>
+        <img src="images/projects/covedTracker/1.png" class="main-img">
+
+        <!-- Buttons -->
+        <div class="project-buttons">
+          <a href="https://drive.google.com/file/d/1uRJnmlVKPtJSTiPUL53ki8nLpJgVyboV/view?usp=sharing" class="cv-btn"
+            target="_blank">Download APK</a>
         </div>
       </div>
-      <button class="see-more-btn" onclick="toggleExtra(this)">See More ▼</button>
-    </div>
 
-       <!-- eSquadifi -->
-    <div class="project-card">
-      <h3>eSquadifi</h3>
-      <p>A gaming-focused social application.</p>
-      <img src="images/projects/eSquadify/1.png" class="main-img">
-      <div class="project-buttons">
-        <a href="https://drive.google.com/file/d/1Xn4LLW8m-3vvoBDUtpJqvjeqtFqbL9Qe/view?usp=sharing" class="cv-btn" target="_blank">Download APK</a>
-      </div>
-      <div class="extra-images">
-        <div class="project-images">
-          <img src="images/projects/eSquadify/1.png">
-          <img src="images/projects/eSquadify/2.png">
-          <img src="images/projects/eSquadify/3.png">
-          <img src="images/projects/eSquadify/4.png">
-          <img src="images/projects/eSquadify/5.png">
-          <img src="images/projects/eSquadify/6.png">
-          <img src="images/projects/eSquadify/7.png">
-          <img src="images/projects/eSquadify/8.png">
-          <img src="images/projects/eSquadify/9.png">
-          <img src="images/projects/eSquadify/10.png">
-          <img src="images/projects/eSquadify/11.png">
-          <img src="images/projects/eSquadify/12.png" class="landscape">
-          <img src="images/projects/eSquadify/13.png" class="landscape">
+      <!-- Storage Cleaner App -->
+      <div class="project-card">
+        <h3>Storage Cleaner & Scanner app</h3>
+        <p>Efficiently scans and cleans storage by identifying large and unnecessary files.</p>
+        <p><b>Tech:</b> Flutter • GetX • Isolates • AdMob</p>
+
+        <img src="images/projects/storageCleaner/1.png" class="main-img">
+
+        <!-- Buttons -->
+        <div class="project-buttons">
+          <a href="https://drive.google.com/file/d/1NuYZorCKtJVPpzVGARE6KWJn3O4rm8qy/view?usp=sharing" class="cv-btn"
+            target="_blank">Download APK</a>
         </div>
       </div>
-      <button class="see-more-btn" onclick="toggleExtra(this)">See More ▼</button>
-    </div>
 
-   <!-- Snooker Management -->
-   <div class="project-card">
-    <h3>Snooker Management System</h3>
+      <!--  SafeTap App -->
+      <div class="project-card">
+        <h3>SafeTap app</h3>
+        <p>A safety-focused app enabling quick alerts, real-time location sharing, and emergency notifications.</p>
+        <p><b>Tech:</b> Flutter • BLoC • Supabase • Firebase • Push Notifications • AdMob • Google Maps SDK</p>
+        <img src="images/projects/safeTap/1.png" class="main-img">
 
-  <p>
-    Multi-role snooker management system with Admin, Manager, and
-    Operator dashboards for managing tables, sessions, and billing.
-  </p>
+        <!-- Buttons -->
+        <div class="project-buttons">
+          <a href="https://drive.google.com/file/d/1MNRRlxaCJBHNdlLIUm8e88m579RsJ4RE/view?usp=sharing" class="cv-btn"
+            target="_blank">Download APK</a>
+        </div>
+      </div>
 
-  <img src="images/projects/snooker/1.JPG" class="main-img">
+  </section>
 
-  <div class="project-buttons">
-    <a href="https://snookerpartner.netlify.app"
-       class="cv-btn"
-       target="_blank">
-       Live Demo
+
+  <div style="text-align:center;margin-top:40px;">
+    <a href="resume/Hussain flutter_resume.pdf" download class="cv-btn">
+      Download CV
     </a>
   </div>
-
-  <div class="extra-images">
-    <div class="project-images">
-      <img src="images/projects/snooker/1.JPG" class="landscape">
-      <img src="images/projects/snooker/3.JPG" class="landscape">
-      <img src="images/projects/snooker/2.JPG" class="landscape">
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="tel:+923115169710">📞 +92 311 5169710</a>
+      <a href="mailto:hussainmatloob98012@gmail.com">📧 hussainmatloob98012@gmail.com</a>
+      <a href="https://github.com/HussainMatloob" target="_blank">GitHub: github.com/HussainMatloob</a>
+      <a href="https://linkedin.com/in/hussain-matloob-339b9629b" target="_blank">LinkedIn:
+        linkedin.com/in/hussain-matloob-339b9629b</a>
     </div>
-  </div>
+  </section>
 
-  <button class="see-more-btn" onclick="toggleExtra(this)">
-    See More ▼
-  </button>
-</div>
+  <footer
+    style="text-align:center;padding:30px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.05);margin-top:40px;">
+    © 2026 Hussain Matloob • Flutter Developer
+  </footer>
 
-     <!-- Food Delivery -->
-    <div class="project-card">
-      <h3>Food Delivery app</h3>
-      <p>Multi-role food delivery system with customer, rider, admin.</p>
-      <img src="images/projects/foodApp/1.JPG" class="main-img">
-
-            <!-- Buttons -->
-      <div class="project-buttons">
-      <a href="https://drive.google.com/file/d/1gUUIP39iQqkiwSdbznwm6bKgctVtoAjU/view?usp=sharing"
-       class="cv-btn" target="_blank">
-       Food User App
-      </a>
-       <a href="https://drive.google.com/file/d/1N1ZD6Q85PWiHspFY1xjetrMVvJaM4FV4/view?usp=sharing"
-       class="cv-btn" target="_blank">
-      Food Delivery Boy App
-      </a>
-    </div>
-  </div>
-
-    <!-- Covid tracker app -->
-    <div class="project-card">
-      <h3>Covid Tracker app</h3>
-      <p>COVID-19 tracker displaying real-time statistics by country.</p>
-      <img src="images/projects/covedTracker/1.png" class="main-img">
-
-            <!-- Buttons -->
-       <div class="project-buttons">
-        <a href="https://drive.google.com/file/d/1uRJnmlVKPtJSTiPUL53ki8nLpJgVyboV/view?usp=sharing" class="cv-btn" target="_blank">Download APK</a>
-      </div>
-  </div>
-
-</section>
-
-
-<div style="text-align:center;margin-top:40px;">
-  <a href="resume/Hussain flutter_resume.pdf" download class="cv-btn">
-    Download CV
-  </a>
-</div>
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-<div class="contact">
-  <a href="tel:+923115169710">📞 +92 311 5169710</a>
-  <a href="mailto:hussainmatloob98012@gmail.com">📧 hussainmatloob98012@gmail.com</a>
-  <a href="https://github.com/HussainMatloob" target="_blank">GitHub: github.com/HussainMatloob</a>
-  <a href="https://linkedin.com/in/hussain-matloob-339b9629b" target="_blank">LinkedIn: linkedin.com/in/hussain-matloob-339b9629b</a>
-</div>
-</section>
-
-<footer style="text-align:center;padding:30px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.05);margin-top:40px;">
-  © 2026 Hussain Matloob • Flutter Developer
-</footer>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const hero = document.querySelector('.hero');
-  setTimeout(() => hero.classList.add('show'), 100);
-});
-function toggleExtra(btn) {
-  const extra = btn.previousElementSibling; // extra-images div
-  if(extra.style.display === "flex") {
-    extra.style.display = "none";
-    btn.textContent = "See More ▼";
-  } else {
-    extra.style.display = "flex";
-    btn.textContent = "See Less ▲";
-  }
-}
-
-// Hamburger toggle
-function toggleMenu(el){
-  const nav = document.querySelector('.nav-links');
-  nav.classList.toggle('mobile-active');
-  el.classList.toggle('active');
-}
-
-// Scroll active link & close mobile menu on click
-const navLinks = document.querySelectorAll('.nav-link');
-const hamburger = document.querySelector('.hamburger');
-const navLinksContainer = document.querySelector('.nav-links');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    // Set active class
-    navLinks.forEach(l => l.classList.remove('active'));
-    link.classList.add('active');
-
-    // Close mobile menu if open
-    if(navLinksContainer.classList.contains('mobile-active')){
-      navLinksContainer.classList.remove('mobile-active');
-      hamburger.classList.remove('active');
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hero = document.querySelector('.hero');
+      setTimeout(() => hero.classList.add('show'), 100);
+    });
+    function toggleExtra(btn) {
+      const extra = btn.previousElementSibling; // extra-images div
+      if (extra.style.display === "flex") {
+        extra.style.display = "none";
+        btn.textContent = "See More ▼";
+      } else {
+        extra.style.display = "flex";
+        btn.textContent = "See Less ▲";
+      }
     }
-  });
-});
-</script>
+
+    // Hamburger toggle
+    function toggleMenu(el) {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('mobile-active');
+      el.classList.toggle('active');
+    }
+
+    // Scroll active link & close mobile menu on click
+    const navLinks = document.querySelectorAll('.nav-link');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Set active class
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        // Close mobile menu if open
+        if (navLinksContainer.classList.contains('mobile-active')) {
+          navLinksContainer.classList.remove('mobile-active');
+          hamburger.classList.remove('active');
+        }
+      });
+    });
+  </script>
 
 
 </body>
+
 </html>
