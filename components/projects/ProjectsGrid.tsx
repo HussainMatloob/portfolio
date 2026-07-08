@@ -8,17 +8,18 @@ export default function ProjectsGrid() {
     );
 
     return (
-        <div className="mt-24">
+        <div className="mt-36">
 
             <div className="mb-12">
 
                 <h2 className="text-4xl font-bold">
-                    Mobile Applications
+                    Production-Ready Mobile Applications
                 </h2>
 
                 <p className="mt-4 max-w-2xl text-lg text-gray-400">
-                    Production-ready mobile applications developed for startups,
-                    businesses, and real-world users across multiple industries.
+                    Cross-platform Flutter applications built for startups and businesses,
+                    spanning finance, safety, booking, social networking, trading, food delivery,
+                    and business management solutions.
                 </p>
 
             </div>

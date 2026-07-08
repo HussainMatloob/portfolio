@@ -34,7 +34,7 @@ export default function Navbar() {
                         href="#home"
                         className="text-2xl font-bold tracking-wide"
                     >
-                        Hussan
+                        Hussain
                         <span className="text-blue-500">.</span>
                     </a>
 

@@ -17,7 +17,7 @@ export default function Projects() {
                 </span>
 
                 <h2 className="mt-4 text-4xl font-extrabold md:text-5xl">
-                    Featured Projects
+                    Featured Project
                 </h2>
 
                 <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MobileProjectPreview from "./MobileProjectPreview";
 import {
     FaGooglePlay,
     FaGlobe,
@@ -29,17 +30,26 @@ export default function ProjectCard({ project }: Props) {
         >
             {/* Image */}
 
-            <div className="relative h-[280px] bg-[#09090B]">
+            {project.device === "web" ? (
 
-                <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-contain p-6"
+                <div className="relative h-[320px] bg-[#09090B]">
+
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-contain p-8"
+                    />
+
+                </div>
+
+            ) : (
+
+                <MobileProjectPreview
+                    screenshots={project.screenshots}
                 />
 
-            </div>
-
+            )}
             {/* Content */}
 
             <div className="p-6">
@@ -85,68 +95,34 @@ export default function ProjectCard({ project }: Props) {
 
                 <div className="mt-8 flex flex-wrap gap-3">
 
-                    {project.playStore && (
-                        <a
-                            href={project.playStore}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                            flex items-center gap-2
-                            rounded-xl
-                            bg-blue-600
-                            px-5
-                            py-3
-                            font-semibold
-                            transition
-                            hover:bg-blue-700"
-                        >
-                            <FaGooglePlay />
+                    {project.links.map((link, index) => {
 
-                            Play Store
-                        </a>
-                    )}
+                        const Icon =
+                            link.type === "website"
+                                ? FaGlobe
+                                : link.type === "playstore"
+                                    ? FaGooglePlay
+                                    : FaDownload;
 
-                    {project.website && (
-                        <a
-                            href={project.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                            flex items-center gap-2
-                            rounded-xl
-                            border
-                            border-white/10
-                            px-5
-                            py-3
-                            transition
-                            hover:border-blue-500"
-                        >
-                            <FaGlobe />
+                        const isPrimary = link.type === "website";
 
-                            Website
-                        </a>
-                    )}
-
-                    {project.apk && (
-                        <a
-                            href={project.apk}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                            flex items-center gap-2
-                            rounded-xl
-                            border
-                            border-white/10
-                            px-5
-                            py-3
-                            transition
-                            hover:border-blue-500"
-                        >
-                            <FaDownload />
-
-                            APK
-                        </a>
-                    )}
+                        return (
+                            <a
+                                key={index}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={
+                                    isPrimary
+                                        ? "flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold transition hover:bg-blue-700"
+                                        : "flex items-center gap-2 rounded-xl border border-white/10 px-5 py-3 transition hover:border-blue-500"
+                                }
+                            >
+                                <Icon />
+                                {link.title}
+                            </a>
+                        );
+                    })}
 
                 </div>
 

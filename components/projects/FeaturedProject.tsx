@@ -1,8 +1,9 @@
-import Image from "next/image";
+
+import WebProjectPreview from "./WebProjectPreview";
 import {
     FaGlobe,
     FaGooglePlay,
-    FaArrowRight
+    FaDownload
 } from "react-icons/fa";
 import TechBadge from "./TechBadge";
 
@@ -29,16 +30,13 @@ export default function FeaturedProject({ project }: Props) {
 
                 {/* LEFT IMAGE */}
 
-                <div className="relative min-h-[320px] lg:min-h-[600px] bg-[#09090B]">
 
-                    <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        priority
-                        className="object-contain p-8"
+
+                <div className="p-6 lg:p-8">
+                    <WebProjectPreview
+                        screenshots={project.screenshots}
+                        title={project.title}
                     />
-
                 </div>
 
                 {/* RIGHT CONTENT */}
@@ -108,49 +106,44 @@ export default function FeaturedProject({ project }: Props) {
 
                     <div className="mt-10 flex flex-wrap gap-4">
 
-                        {project.website && (
-                            <a
-                                href={project.website}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="
-                                flex items-center gap-2
-                                rounded-xl
-                                bg-blue-600
-                                px-6
-                                py-3
-                                font-semibold
-                                transition
-                                hover:bg-blue-700"
-                            >
-                                <FaGlobe />
+                        {project.links.map(
+                            (
+                                link: {
+                                    title: string;
+                                    url: string;
+                                    type: "website" | "playstore" | "apk";
+                                },
+                                index: number
+                            ) => {
 
-                                Live Website
-                            </a>
+                                const Icon =
+                                    link.type === "website"
+                                        ? FaGlobe
+                                        : link.type === "playstore"
+                                            ? FaGooglePlay
+                                            : FaDownload;
+
+                                const isPrimary = link.type === "website";
+
+                                return (
+                                    <a
+                                        key={index}
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={
+                                            isPrimary
+                                                ? "flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold transition hover:bg-blue-700"
+                                                : "flex items-center gap-2 rounded-xl border border-white/10 px-6 py-3 transition hover:border-blue-500"
+                                        }
+                                    >
+                                        <Icon />
+
+                                        {link.title}
+                                    </a>
+                                );
+                            }
                         )}
-
-                        {project.playStore && (
-                            <a
-                                href={project.playStore}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="
-                                flex items-center gap-2
-                                rounded-xl
-                                border
-                                border-white/10
-                                px-6
-                                py-3
-                                transition
-                                hover:border-blue-500"
-                            >
-                                <FaGooglePlay />
-
-                                Play Store
-                            </a>
-                        )}
-
-
 
                     </div>
 

@@ -1,35 +1,21 @@
+export type ProjectLink = {
+    title: string;
+    url: string;
+    type: "website" | "playstore" | "apk";
+};
 export type Project = {
     id: number;
-
     featured: boolean;
-
     title: string;
-
-    category:
-    | "Featured"
-    | "Production App"
-    | "Professional Contribution"
-    | "Business Management SaaS";
-
+    category: "Featured" | "Production App" | "Professional Contribution" | "Business Management SaaS";
     role: string;
-
     shortDescription: string;
-
     description?: string;
-
     technologies: string[];
-
     image: string;
-
+    device: "web" | "mobile";
     screenshots: string[];
-
-    website?: string;
-
-    playStore?: string;
-
-    apk?: string;
-
-    github?: string;
+    links: ProjectLink[];
 };
 
 
@@ -40,12 +26,12 @@ export const projects: Project[] = [
         featured: true,
 
         title: "Snooker Partner",
-
+        device: "web",
         shortDescription:
-            "A production-ready Flutter Web SaaS platform that helps snooker clubs manage tables, billing, memberships, employees, expenses, inventory, reports, and day-to-day operations.",
+            "Production-ready Flutter Web SaaS platform for snooker clubs, featuring table management, billing, memberships, employee management, inventory tracking, business reports, and daily operations.",
 
         description:
-            "Snooker Partner is a complete business management platform developed with Flutter Web for snooker clubs. The system includes secure authentication, real-time table management, session tracking, billing, customer management, expense tracking, inventory management, reporting, employee management, and role-based access control. It is designed to replace manual workflows with an efficient, scalable, and easy-to-use digital solution.",
+            "Snooker Partner is a production-ready business management platform built with Flutter Web specifically for snooker clubs. It streamlines daily operations through secure authentication, real-time table allocation and game tracking, membership management, employee attendance and salary management, inventory control, sales and expense tracking, and detailed profit & loss reporting. The platform also includes role-based access control, providing club ownersand operators with a secure and efficient workflow.",
 
         role:
             "Founder • Full Stack Flutter Developer",
@@ -61,16 +47,20 @@ export const projects: Project[] = [
         image: "/images/projects/snooker/1.JPG",
 
         screenshots: [
-            "/images/projects/snooker/1.JPG",
-            "/images/projects/snooker/2.JPG",
-            "/images/projects/snooker/3.JPG"
+            "/images/projects/snooker/1.png",
+            "/images/projects/snooker/2.png",
+            "/images/projects/snooker/3.png"
         ],
 
-        website: "https://snookerpartner.com",
+        links: [
+            {
+                title: "Live Website",
+                type: "website",
+                url: "https://www.snookerpartner.com"
+            }
+        ],
 
-        playStore: "",
 
-        github: "",
 
         category: "Business Management SaaS"
     },
@@ -78,12 +68,12 @@ export const projects: Project[] = [
         id: 2,
 
         featured: false,
-
+        device: "mobile",
         title: "SafeTap",
 
         category: "Production App",
 
-        role: "Flutter Developer",
+        role: "Founder • Flutter Developer",
 
         shortDescription:
             "A personal safety application providing emergency alerts, live location sharing, and real-time notifications.",
@@ -106,19 +96,23 @@ export const projects: Project[] = [
             "/images/projects/safeTap/3.png"
         ],
 
-        playStore:
-            "https://play.google.com/store/apps/details?id=com.safetap.secure",
+        links: [
+            {
+                title: "Play Store",
+                type: "playstore",
+                url: "https://play.google.com/store/apps/details?id=com.safetap.secure",
+            }
+        ],
 
-        website: "",
 
-        github: ""
+
     },
 
     {
         id: 3,
 
         featured: false,
-
+        device: "mobile",
         title: "Storage Cleaner",
 
         category: "Production App",
@@ -139,23 +133,29 @@ export const projects: Project[] = [
         image: "/images/projects/storageCleaner/1.png",
 
         screenshots: [
-            "/images/projects/storageCleaner/1.png"
+            "/images/projects/storageCleaner/1.png",
+            "/images/projects/storageCleaner/2.png",
+            "/images/projects/storageCleaner/3.png"
+        ],
+        links: [
+            {
+                title: "Play Store",
+                type: "playstore",
+                url: "https://play.google.com/store/apps/details?id=com.hmtech.filescanner",
+            }
         ],
 
-        playStore:
-            "https://play.google.com/store/apps/details?id=com.hmtech.filescanner",
 
-        website: "",
 
-        apk: "",
 
-        github: ""
+
+
     },
     {
         id: 4,
 
         featured: false,
-
+        device: "mobile",
         title: "Love Connection",
 
         category: "Production App",
@@ -175,23 +175,29 @@ export const projects: Project[] = [
         image: "/images/projects/loveconnection/1.png",
 
         screenshots: [
-            "/images/projects/loveconnection/1.png"
+            "/images/projects/loveconnection/1.png",
+            "/images/projects/loveconnection/2.png",
+            "/images/projects/loveconnection/3.png"
+        ],
+        links: [
+            {
+                title: "Play Store",
+                type: "playstore",
+                url: "https://play.google.com/store/apps/details?id=com.loveconnection.app",
+
+            }
         ],
 
-        playStore:
-            "https://play.google.com/store/apps/details?id=com.loveconnection.app",
 
-        website: "",
 
-        apk: "",
 
-        github: ""
+
     },
     {
         id: 5,
 
         featured: false,
-
+        device: "mobile",
         title: "Ground Booking System",
 
         category: "Professional Contribution",
@@ -215,20 +221,26 @@ export const projects: Project[] = [
             "/images/projects/groundSystem/3.png"
         ],
 
-        playStore:
-            "https://play.google.com/store/apps/details?id=com.techanion.groundbooking",
+        links: [
+            {
+                title: "User App",
+                type: "playstore",
+                url: "https://play.google.com/store/apps/details?id=com.techanion.groundbooking"
+            },
+            {
+                title: "Partner App",
+                type: "playstore",
+                url: "https://play.google.com/store/apps/details?id=com.techanion.bookingpartner"
+            }
+        ],
 
-        website: "",
 
-        apk: "",
-
-        github: ""
     },
     {
         id: 6,
 
         featured: false,
-
+        device: "mobile",
         title: "WedPlan360",
 
         category: "Professional Contribution",
@@ -254,20 +266,23 @@ export const projects: Project[] = [
             "/images/projects/wedPlane360/3.png"
         ],
 
-        playStore: "",
 
-        website: "",
+        links: [
+            {
+                title: "Download APK",
+                type: "apk",
+                url: "https://drive.google.com/file/d/1i30Fs1av_E-cPNxZVkhyPm6-oiOEuv9L/view?usp=sharing",
+            }
+        ],
 
-        apk:
-            "https://drive.google.com/file/d/1i30Fs1av_E-cPNxZVkhyPm6-oiOEuv9L/view?usp=sharing",
 
-        github: ""
+
     },
     {
         id: 7,
 
         featured: false,
-
+        device: "mobile",
         title: "GFCM Trading",
 
         category: "Professional Contribution",
@@ -292,20 +307,23 @@ export const projects: Project[] = [
             "/images/projects/gfcmTrading/3.png"
         ],
 
-        playStore: "",
 
-        website: "",
+        links: [
+            {
+                title: "Download APK",
+                type: "apk",
+                url: "https://drive.google.com/file/d/1KV40ru5GXeZignP5WD18KAbXdUDvTBgR/view?usp=sharing",
+            }
+        ],
 
-        apk:
-            "https://drive.google.com/file/d/1KV40ru5GXeZignP5WD18KAbXdUDvTBgR/view?usp=sharing",
 
-        github: ""
+
     },
     {
         id: 8,
 
         featured: false,
-
+        device: "mobile",
         title: "eSquadifi",
 
         category: "Professional Contribution",
@@ -321,6 +339,7 @@ export const projects: Project[] = [
             "GetX"
         ],
 
+
         image: "/images/projects/eSquadify/1.png",
 
         screenshots: [
@@ -329,20 +348,24 @@ export const projects: Project[] = [
             "/images/projects/eSquadify/3.png"
         ],
 
-        playStore: "",
 
-        website: "",
 
-        apk:
-            "https://drive.google.com/file/d/1Xn4LLW8m-3vvoBDUtpJqvjeqtFqbL9Qe/view?usp=sharing",
 
-        github: ""
+        links: [
+            {
+                title: "Download APK",
+                type: "apk",
+                url: "https://drive.google.com/file/d/1Xn4LLW8m-3vvoBDUtpJqvjeqtFqbL9Qe/view?usp=sharing",
+            }
+        ],
+
+
     },
     {
         id: 9,
 
         featured: false,
-
+        device: "mobile",
         title: "Food Delivery System",
 
         category: "Professional Contribution",
@@ -365,13 +388,23 @@ export const projects: Project[] = [
             "/images/projects/foodApp/1.JPG"
         ],
 
-        playStore: "",
 
-        website: "",
 
-        apk:
-            "https://drive.google.com/file/d/1gUUIP39iQqkiwSdbznwm6bKgctVtoAjU/view?usp=sharing",
 
-        github: ""
+
+        links: [
+            {
+                title: "Customer App",
+                type: "apk",
+                url: "https://drive.google.com/file/d/1gUUIP39iQqkiwSdbznwm6bKgctVtoAjU/view?usp=sharing"
+            },
+            {
+                title: "Delivery Rider",
+                type: "apk",
+                url: "https://drive.google.com/file/d/1N1ZD6Q85PWiHspFY1xjetrMVvJaM4FV4/view?usp=sharing"
+            }
+        ],
+
+
     },
 ];
