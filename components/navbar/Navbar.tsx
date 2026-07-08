@@ -1,14 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { navLinks } from "./navLinks";
 import MobileMenu from "./MobileMenu";
 
+
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("home");
+    const isAutoScrolling = useRef(false);
+    const targetSection = useRef("");
 
+    // Navbar background
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
@@ -16,7 +21,64 @@ export default function Navbar() {
 
         window.addEventListener("scroll", handleScroll);
 
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () =>
+            window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    // Active section
+    useEffect(() => {
+        const handleScroll = () => {
+
+            setScrolled(window.scrollY > 20);
+
+            // Ignore updates while auto-scrolling
+            if (isAutoScrolling.current) {
+
+                const target = document.getElementById(targetSection.current);
+
+                if (target) {
+
+                    const top = target.getBoundingClientRect().top;
+
+                    // Destination reached
+                    if (Math.abs(top) < 8) {
+                        isAutoScrolling.current = false;
+                    }
+
+                }
+
+                return;
+            }
+
+            const sections =
+                document.querySelectorAll<HTMLElement>("section[id]");
+
+            const scrollPosition = window.scrollY + 120;
+
+            let current = "home";
+
+            sections.forEach((section) => {
+
+                if (
+                    scrollPosition >= section.offsetTop &&
+                    scrollPosition <
+                    section.offsetTop + section.offsetHeight
+                ) {
+                    current = section.id;
+                }
+
+            });
+
+            setActiveSection(current);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        handleScroll();
+
+        return () =>
+            window.removeEventListener("scroll", handleScroll);
+
     }, []);
 
     return (
@@ -30,6 +92,7 @@ export default function Navbar() {
                 <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
                     {/* Logo */}
+
                     <a
                         href="#home"
                         className="text-2xl font-bold tracking-wide"
@@ -39,19 +102,61 @@ export default function Navbar() {
                     </a>
 
                     {/* Desktop Menu */}
-                    <nav className="hidden items-center gap-8 lg:flex">
-                        {navLinks.map((item) => (
-                            <a
-                                key={item.title}
-                                href={item.href}
-                                className="text-sm font-medium text-gray-300 transition hover:text-blue-400"
-                            >
-                                {item.title}
-                            </a>
-                        ))}
+
+                    <nav className="hidden items-center gap-3 lg:flex">
+
+                        {navLinks.map((item) => {
+
+                            const active =
+                                activeSection ===
+                                item.href.replace("#", "");
+
+                            return (
+                                <a
+                                    key={item.title}
+                                    href={item.href}
+                                    onClick={(e) => {
+
+                                        e.preventDefault();
+
+                                        const id = item.href.replace("#", "");
+
+                                        setActiveSection(id);
+
+                                        isAutoScrolling.current = true;
+
+                                        targetSection.current = id;
+
+                                        document.getElementById(id)?.scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "start",
+                                        });
+
+                                    }}
+                                    className={`
+                                        rounded-full
+                                        px-4
+                                        py-2
+                                        text-sm
+                                        font-medium
+                                        transition-all
+                                        duration-300
+                                        ${active
+                                            ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
+                                            : "text-gray-300 hover:text-blue-400"
+                                        }
+                                    `}
+                                >
+                                    {item.title}
+                                </a>
+                            );
+
+                        })}
+
                     </nav>
 
                     {/* Desktop Buttons */}
+
                     <div className="hidden items-center gap-3 lg:flex">
 
                         <a
@@ -72,7 +177,8 @@ export default function Navbar() {
 
                     </div>
 
-                    {/* Mobile Button */}
+                    {/* Mobile */}
+
                     <button
                         onClick={() => setMenuOpen(true)}
                         className="lg:hidden"
@@ -86,8 +192,8 @@ export default function Navbar() {
             <MobileMenu
                 open={menuOpen}
                 onClose={() => setMenuOpen(false)}
+                activeSection={activeSection}
             />
-
         </>
     );
 }

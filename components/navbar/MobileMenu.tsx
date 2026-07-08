@@ -6,6 +6,7 @@ import { navLinks } from "./navLinks";
 type Props = {
     open: boolean;
     onClose: () => void;
+    activeSection: string;
 };
 
 export default function MobileMenu({

@@ -31,7 +31,7 @@ export const projects: Project[] = [
             "Production-ready Flutter Web SaaS platform for snooker clubs, featuring table management, billing, memberships, employee management, inventory tracking, business reports, and daily operations.",
 
         description:
-            "Snooker Partner is a production-ready business management platform built with Flutter Web specifically for snooker clubs. It streamlines daily operations through secure authentication, real-time table allocation and game tracking, membership management, employee attendance and salary management, inventory control, sales and expense tracking, and detailed profit & loss reporting. The platform also includes role-based access control, providing club ownersand operators with a secure and efficient workflow.",
+            "Snooker Partner is a production-ready business management platform built with Flutter Web specifically for snooker clubs. It streamlines daily operations through secure authentication, real-time table allocation and game tracking, membership management, employee attendance and salary management, inventory control, sales and expense tracking, and detailed profit & loss reporting. The platform also includes role-based access control, providing club owners and operators with a secure and efficient workflow.",
 
         role:
             "Founder • Full Stack Flutter Developer",
@@ -163,7 +163,7 @@ export const projects: Project[] = [
         role: "Flutter Developer",
 
         shortDescription:
-            "A modern matchmaking platform that enables profile discovery, connection requests, and secure communication.",
+            "A modern marriage matchmaking platform that helps users discover compatible profiles, send connection requests, and build meaningful relationships through a secure and intuitive experience.",
 
         technologies: [
             "Flutter",
@@ -217,8 +217,8 @@ export const projects: Project[] = [
 
         screenshots: [
             "/images/projects/groundSystem/1.png",
-            "/images/projects/groundSystem/2.png",
-            "/images/projects/groundSystem/3.png"
+            "/images/projects/groundSystem/6.png",
+            "/images/projects/groundSystem/10.png"
         ],
 
         links: [
@@ -263,7 +263,7 @@ export const projects: Project[] = [
         screenshots: [
             "/images/projects/wedPlane360/1.png",
             "/images/projects/wedPlane360/2.png",
-            "/images/projects/wedPlane360/3.png"
+            "/images/projects/wedPlane360/5.png"
         ],
 
 
@@ -302,8 +302,8 @@ export const projects: Project[] = [
         image: "/images/projects/gfcmTrading/1.png",
 
         screenshots: [
-            "/images/projects/gfcmTrading/1.png",
             "/images/projects/gfcmTrading/2.png",
+            "/images/projects/gfcmTrading/11.png",
             "/images/projects/gfcmTrading/3.png"
         ],
 
@@ -344,8 +344,8 @@ export const projects: Project[] = [
 
         screenshots: [
             "/images/projects/eSquadify/1.png",
-            "/images/projects/eSquadify/2.png",
-            "/images/projects/eSquadify/3.png"
+            "/images/projects/eSquadify/5.png",
+            "/images/projects/eSquadify/2.png"
         ],
 
 
@@ -385,7 +385,9 @@ export const projects: Project[] = [
         image: "/images/projects/foodApp/1.JPG",
 
         screenshots: [
-            "/images/projects/foodApp/1.JPG"
+            "/images/projects/foodApp/1.png",
+            "/images/projects/foodApp/4.png",
+            "/images/projects/foodApp/3.png"
         ],
 
 
