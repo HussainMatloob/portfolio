@@ -26,13 +26,13 @@ export default function FeaturedProject({ project }: Props) {
             duration-500
             hover:border-blue-500/40"
         >
-            <div className="grid lg:grid-cols-2">
+            <div className="grid grid-cols-1 items-center lg:grid-cols-2">
 
                 {/* LEFT IMAGE */}
 
 
 
-                <div className="p-6 lg:p-8">
+                <div className="flex justify-center p-4 sm:p-6 lg:p-8">
                     <WebProjectPreview
                         screenshots={project.screenshots}
                         title={project.title}

@@ -7,11 +7,18 @@ type Props = {
     open: boolean;
     onClose: () => void;
     activeSection: string;
+    setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+    isAutoScrolling: React.MutableRefObject<boolean>;
+    targetSection: React.MutableRefObject<string>;
 };
 
 export default function MobileMenu({
     open,
     onClose,
+    activeSection,
+    setActiveSection,
+    isAutoScrolling,
+    targetSection,
 }: Props) {
 
     return (
@@ -46,18 +53,39 @@ export default function MobileMenu({
 
                 <nav className="flex flex-col gap-6">
 
-                    {navLinks.map((item) => (
+                    {navLinks.map((item) => {
+                        const active = activeSection === item.href.replace("#", "");
 
-                        <a
-                            key={item.title}
-                            href={item.href}
-                            onClick={onClose}
-                            className="text-lg text-gray-300 transition hover:text-blue-400"
-                        >
-                            {item.title}
-                        </a>
+                        return (
+                            <a
+                                key={item.title}
+                                href={item.href}
+                                onClick={(e) => {
+                                    e.preventDefault();
 
-                    ))}
+                                    const id = item.href.replace("#", "");
+
+                                    setActiveSection(id);
+
+                                    isAutoScrolling.current = true;
+                                    targetSection.current = id;
+
+                                    document.getElementById(id)?.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start",
+                                    });
+
+                                    onClose();
+                                }}
+                                className={`rounded-lg px-3 py-2 text-lg transition ${active
+                                    ? "bg-blue-600 text-white"
+                                    : "text-gray-300 hover:text-blue-400"
+                                    }`}
+                            >
+                                {item.title}
+                            </a>
+                        );
+                    })}
 
                 </nav>
 
@@ -74,7 +102,21 @@ export default function MobileMenu({
 
                     <a
                         href="#contact"
-                        onClick={onClose}
+                        onClick={(e) => {
+                            e.preventDefault();
+
+                            setActiveSection("contact");
+
+                            isAutoScrolling.current = true;
+                            targetSection.current = "contact";
+
+                            document.getElementById("contact")?.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                            });
+
+                            onClose();
+                        }}
                         className="rounded-xl bg-blue-600 px-5 py-3 text-center font-semibold"
                     >
                         Hire Me

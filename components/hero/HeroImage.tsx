@@ -21,7 +21,7 @@ export default function HeroImage() {
                     <div className="relative h-[220px] w-[220px] overflow-hidden rounded-full border border-white/10 sm:h-[280px] sm:w-[280px] lg:h-[420px] lg:w-[420px]">
 
                         <Image
-                            src="/images/profilePicture.png"
+                            src="/images/profile.png"
                             alt={personal.name}
                             fill
                             priority

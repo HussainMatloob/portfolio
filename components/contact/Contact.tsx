@@ -5,7 +5,7 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="mx-auto max-w-7xl px-6 pt-28 pb-6"
+            className="mx-auto max-w-7xl px-5 pt-14 pb-8 sm:px-6 lg:pt-28 lg:pb-10"
         >
             <div className="mt-8 border-t border-white/10 pt-6">
 
@@ -13,11 +13,11 @@ export default function Contact() {
                     Contact
                 </span>
 
-                <h2 className="mt-4 text-4xl font-extrabold md:text-5xl">
+                <h2 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
                     Let's Build Something Great Together
                 </h2>
 
-                <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+                <p className="mt-6 max-w-3xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
                     Looking for a Flutter developer to build scalable mobile apps,
                     Flutter Web applications, or backend solutions? Let's discuss
                     your project and bring your ideas to life.
@@ -25,7 +25,7 @@ export default function Contact() {
 
             </div>
 
-            <div className="grid gap-12 lg:grid-cols-2">
+            <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-16">
 
                 <ContactContent />
 

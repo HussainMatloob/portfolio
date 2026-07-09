@@ -10,7 +10,7 @@ import { personal } from "@/data/personal";
 
 export default function SocialLinks() {
     return (
-        <div className="mt-10 flex flex-wrap items-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
 
             <a
                 href={personal.github}

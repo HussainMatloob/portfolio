@@ -13,72 +13,42 @@ export default function Navbar() {
     const isAutoScrolling = useRef(false);
     const targetSection = useRef("");
 
-    // Navbar background
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
-        };
 
-        window.addEventListener("scroll", handleScroll);
-
-        return () =>
-            window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    // Active section
-    useEffect(() => {
-        const handleScroll = () => {
-
-            setScrolled(window.scrollY > 20);
-
-            // Ignore updates while auto-scrolling
             if (isAutoScrolling.current) {
-
                 const target = document.getElementById(targetSection.current);
 
-                if (target) {
-
-                    const top = target.getBoundingClientRect().top;
-
-                    // Destination reached
-                    if (Math.abs(top) < 8) {
-                        isAutoScrolling.current = false;
-                    }
-
+                if (target && Math.abs(target.getBoundingClientRect().top) < 8) {
+                    isAutoScrolling.current = false;
                 }
 
                 return;
             }
 
-            const sections =
-                document.querySelectorAll<HTMLElement>("section[id]");
+            const sections = document.querySelectorAll<HTMLElement>("section[id]");
 
             const scrollPosition = window.scrollY + 120;
 
             let current = "home";
 
             sections.forEach((section) => {
-
                 if (
                     scrollPosition >= section.offsetTop &&
-                    scrollPosition <
-                    section.offsetTop + section.offsetHeight
+                    scrollPosition < section.offsetTop + section.offsetHeight
                 ) {
                     current = section.id;
                 }
-
             });
 
             setActiveSection(current);
         };
 
         window.addEventListener("scroll", handleScroll);
-
         handleScroll();
 
-        return () =>
-            window.removeEventListener("scroll", handleScroll);
-
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
@@ -170,6 +140,21 @@ export default function Navbar() {
 
                         <a
                             href="#contact"
+                            onClick={(e) => {
+                                e.preventDefault();
+
+                                const id = "contact";
+
+                                setActiveSection(id);
+
+                                isAutoScrolling.current = true;
+                                targetSection.current = id;
+
+                                document.getElementById(id)?.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start",
+                                });
+                            }}
                             className="rounded-xl bg-blue-600 px-5 py-2 text-sm font-semibold transition hover:bg-blue-700"
                         >
                             Hire Me
@@ -193,6 +178,9 @@ export default function Navbar() {
                 open={menuOpen}
                 onClose={() => setMenuOpen(false)}
                 activeSection={activeSection}
+                setActiveSection={setActiveSection}
+                isAutoScrolling={isAutoScrolling}
+                targetSection={targetSection}
             />
         </>
     );

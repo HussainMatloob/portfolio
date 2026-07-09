@@ -15,11 +15,11 @@ export default function ContactContent() {
     return (
         <div>
 
-            <h3 className="text-3xl font-bold">
+            <h3 className="text-2xl font-bold sm:text-3xl">
                 Why Work With Me?
             </h3>
 
-            <p className="mt-6 text-lg leading-8 text-gray-400">
+            <p className="mt-6 text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
                 I develop production-ready Flutter applications with clean
                 architecture, scalable code, and modern UI. My goal is to build
                 reliable software that provides long-term value for your business.
@@ -30,11 +30,9 @@ export default function ContactContent() {
                 {points.map((item) => (
                     <div
                         key={item}
-                        className="flex items-center gap-4"
+                        className="flex items-start gap-4"
                     >
-                        <FaCheckCircle
-                            className="text-blue-500"
-                        />
+                        <FaCheckCircle className="mt-1 shrink-0 text-blue-500" />
 
                         <span className="text-gray-300">
                             {item}

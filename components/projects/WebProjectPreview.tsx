@@ -28,32 +28,34 @@ export default function WebProjectPreview({
     return (
         <div
             className="
-    flex
-    min-h-[560px]
-    items-center
-    justify-center
-    bg-gradient-to-br
-    from-[#0F172A]
-    via-[#111827]
-    to-[#1E293B]
-    p-8"
+        flex
+        w-full
+        justify-center
+        p-2
+        sm:p-4
+        lg:p-6
+    "
         >
             {/* Browser */}
 
             <div
                 className="
-    relative
-    flex
-    h-[520px]
-    w-full
-    max-w-5xl
-    flex-col
-    overflow-hidden
-    rounded-2xl
-    border
-    border-white/10
-    bg-[#0B1220]
-    shadow-[0_40px_120px_rgba(0,0,0,0.5)]"
+        relative
+        flex
+        w-full
+        max-w-[700px]
+        flex-col
+        overflow-hidden
+        rounded-2xl
+        border
+        border-white/10
+        bg-[#0B1220]
+        shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+        h-[220px]
+        sm:h-[320px]
+        md:h-[420px]
+        lg:h-[500px]
+    "
             >
 
                 {/* Browser Header */}
@@ -74,7 +76,7 @@ export default function WebProjectPreview({
                         <div className="h-3 w-3 rounded-full bg-green-400" />
                     </div>
 
-                    <div className="rounded-full bg-white/5 px-5 py-1 text-xs text-gray-400">
+                    <div className="max-w-[55%] truncate rounded-full bg-white/5 px-3 py-1 text-[10px] sm:px-5 sm:text-xs text-gray-400">
                         snookerpartner.com
                     </div>
 

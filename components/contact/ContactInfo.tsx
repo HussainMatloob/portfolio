@@ -18,7 +18,7 @@ export default function ContactInfo() {
             border
             border-white/10
             bg-white/5
-            p-8
+            p-5 sm:p-6 lg:p-8
             backdrop-blur-md"
         >
 
@@ -34,7 +34,7 @@ export default function ContactInfo() {
                         href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personal.email}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-lg font-semibold hover:text-blue-400"
+                        className="break-all text-base font-semibold sm:text-lg hover:text-blue-400"
                     >
                         {personal.email}
                     </a>
@@ -63,11 +63,9 @@ export default function ContactInfo() {
                         Availability
                     </p>
 
-                    <div className="mt-2 flex items-center gap-3 text-green-400">
+                    <div className="mt-2 flex items-start gap-3 text-green-400">
 
-                        <FaCircle
-                            className="text-xs"
-                        />
+                        <FaCircle className="mt-1 shrink-0 text-xs" />
 
                         Available for Freelance Projects
 
@@ -77,20 +75,23 @@ export default function ContactInfo() {
 
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 
                 <a
                     href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personal.email}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-    rounded-xl
-    bg-blue-600
-    px-6
-    py-3
-    font-semibold
-    transition
-    hover:bg-blue-700"
+flex
+justify-center
+rounded-xl
+bg-blue-600
+px-6
+py-3
+font-semibold
+transition
+hover:bg-blue-700
+"
                 >
                     Email Me
                 </a>
@@ -99,13 +100,16 @@ export default function ContactInfo() {
                     href={personal.linkedin}
                     target="_blank"
                     className="
-                    rounded-xl
-                    border
-                    border-white/10
-                    px-6
-                    py-3
-                    transition
-                    hover:border-blue-500"
+flex
+justify-center
+rounded-xl
+border
+border-white/10
+px-6
+py-3
+transition
+hover:border-blue-500
+"
                 >
                     <FaLinkedin />
                 </Link>
@@ -114,13 +118,16 @@ export default function ContactInfo() {
                     href={personal.github}
                     target="_blank"
                     className="
-                    rounded-xl
-                    border
-                    border-white/10
-                    px-6
-                    py-3
-                    transition
-                    hover:border-blue-500"
+flex
+justify-center
+rounded-xl
+border
+border-white/10
+px-6
+py-3
+transition
+hover:border-blue-500
+"
                 >
                     <FaGithub />
                 </Link>
