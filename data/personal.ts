@@ -1,7 +1,7 @@
 export const personal = {
     name: "Hussain Matloob",
 
-    title: "Full Stack Flutter Developer & Backend Engineer",
+    title: "Full Stack Flutter Engineer",
 
     shortDescription:
         "I help startups and businesses build production-ready mobile applications using Flutter, Laravel, Firebase, and Supabase. From scalable backend APIs to polished user experiences, I deliver clean, maintainable, and high-performance software solutions.",

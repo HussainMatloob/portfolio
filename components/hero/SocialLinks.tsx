@@ -29,9 +29,7 @@ export default function SocialLinks() {
             </a>
 
             <a
-                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personal.email}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`mailto:${personal.email}`}
                 className="rounded-full border border-white/10 p-3 transition-all hover:border-blue-500 hover:text-blue-400"
             >
                 <FaEnvelope size={20} />

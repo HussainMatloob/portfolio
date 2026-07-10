@@ -18,9 +18,7 @@ export default function Contact() {
                 </h2>
 
                 <p className="mt-6 max-w-3xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
-                    Looking for a Flutter developer to build scalable mobile apps,
-                    Flutter Web applications, or backend solutions? Let's discuss
-                    your project and bring your ideas to life.
+                    Looking for a Full-Stack Flutter developer to build scalable mobile apps, Flutter Web applications, or secure backend APIs? Let's discuss your project and bring your ideas to life.
                 </p>
 
             </div>

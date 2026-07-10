@@ -21,8 +21,7 @@ export default function Projects() {
                 </h2>
 
                 <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
-                    A showcase of production-ready software products, Flutter web applications,
-                    and cross-platform mobile apps built for startups, businesses, and real-world users.
+                    A production-ready SaaS platform built with Flutter, designed to help snooker clubs manage their business through a modern web application and cross-platform mobile experience.
                 </p>
 
             </div>

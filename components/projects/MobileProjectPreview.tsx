@@ -10,13 +10,14 @@ export default function MobileProjectPreview({
     return (
         <div
             className="
-            relative
-            h-[340px]
-            overflow-hidden
-            bg-gradient-to-br
-            from-slate-900
-            via-[#111827]
-            to-slate-900"
+                relative
+                h-[340px]
+                overflow-hidden
+                bg-gradient-to-br
+                from-slate-900
+                via-[#111827]
+                to-slate-900
+            "
         >
             {/* Glow */}
             <div className="absolute inset-0 bg-blue-500/5 blur-3xl" />
@@ -25,24 +26,27 @@ export default function MobileProjectPreview({
             {screenshots[0] && (
                 <div
                     className="
-                    absolute
-                    bottom-0
-                    left-[18%]
-                    h-[285px]
-                    w-[140px]
-                    rotate-[-10deg]
-                    overflow-hidden
-                    rounded-lg
-                    border
-                    border-white/10
-                  shadow-[0_25px_60px_rgba(0,0,0,0.45)]"
+                        absolute
+                        bottom-0
+                        left-[18%]
+                        h-[285px]
+                        w-[140px]
+                        rotate-[-10deg]
+                        overflow-hidden
+                        rounded-lg
+                        border
+                        border-white/10
+                        shadow-[0_25px_60px_rgba(0,0,0,0.45)]
+                    "
                 >
                     <Image
                         src={screenshots[0]}
-                        alt=""
+                        alt="SafeTap Screenshot 1"
                         fill
-                        sizes="200px"
-                        className="object-cover"
+                        quality={100}
+                        unoptimized
+                        sizes="(max-width: 768px) 140px, 280px"
+                        className="object-fill"
                     />
                 </div>
             )}
@@ -51,24 +55,27 @@ export default function MobileProjectPreview({
             {screenshots[1] && (
                 <div
                     className="
-                    absolute
-                    bottom-0
-                    right-[18%]
-                    h-[300px]
-                    w-[145px]
-                    rotate-[8deg]
-                    overflow-hidden
-                    rounded-lg
-                    border
-                    border-white/10
-                   shadow-[0_25px_60px_rgba(0,0,0,0.45)]"
+                        absolute
+                        bottom-0
+                        right-[18%]
+                        h-[300px]
+                        w-[145px]
+                        rotate-[8deg]
+                        overflow-hidden
+                        rounded-lg
+                        border
+                        border-white/10
+                        shadow-[0_25px_60px_rgba(0,0,0,0.45)]
+                    "
                 >
                     <Image
                         src={screenshots[1]}
-                        alt=""
+                        alt="SafeTap Screenshot 2"
                         fill
-                        sizes="200px"
-                        className="object-cover"
+                        quality={100}
+                        unoptimized
+                        sizes="(max-width: 768px) 145px, 290px"
+                        className="object-fill"
                     />
                 </div>
             )}
@@ -77,25 +84,28 @@ export default function MobileProjectPreview({
             {screenshots[2] && (
                 <div
                     className="
-                    absolute
-                    top-8
-                    left-1/2
-                    h-[210px]
-                    w-[105px]
-                    -translate-x-1/2
-                    overflow-hidden
-                    rounded-lg
-                    border
-                    border-white/10
-                    opacity-30
-                    shadow-[0_25px_60px_rgba(0,0,0,0.45)]"
+                        absolute
+                        top-8
+                        left-1/2
+                        h-[210px]
+                        w-[105px]
+                        -translate-x-1/2
+                        overflow-hidden
+                        rounded-lg
+                        border
+                        border-white/10
+                        opacity-30
+                        shadow-[0_25px_60px_rgba(0,0,0,0.45)]
+                    "
                 >
                     <Image
                         src={screenshots[2]}
-                        alt=""
+                        alt="SafeTap Screenshot 3"
                         fill
-                        sizes="200px"
-                        className="object-cover"
+                        quality={100}
+                        unoptimized
+                        sizes="(max-width: 768px) 105px, 210px"
+                        className="object-fill"
                     />
                 </div>
             )}

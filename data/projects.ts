@@ -92,8 +92,8 @@ export const projects: Project[] = [
 
         screenshots: [
             "/images/projects/safeTap/1.png",
-            "/images/projects/safeTap/2.png",
-            "/images/projects/safeTap/3.png"
+            "/images/projects/safeTap/3.png",
+            "/images/projects/safeTap/2.png"
         ],
 
         links: [
@@ -261,9 +261,9 @@ export const projects: Project[] = [
         image: "/images/projects/wedPlane360/1.png",
 
         screenshots: [
-            "/images/projects/wedPlane360/1.png",
-            "/images/projects/wedPlane360/2.png",
-            "/images/projects/wedPlane360/5.png"
+            "/images/projects/wedPlane360/4.png",
+            "/images/projects/wedPlane360/5.png",
+            "/images/projects/wedPlane360/1.png"
         ],
 
 

@@ -17,10 +17,7 @@ export default function Services() {
                 </h2>
 
                 <p className="mt-6 text-lg leading-8 text-gray-400">
-                    I help startups, businesses, and entrepreneurs build
-                    scalable mobile applications, Flutter Web solutions,
-                    backend systems, and cloud-powered software with modern
-                    technologies and production-ready architecture.
+                    I help startups, businesses, and entrepreneurs build cross-platform mobile applications, Flutter Web solutions, backend APIs, and cloud-powered applications using Flutter, Laravel, Firebase, and Supabase.
                 </p>
 
             </div>

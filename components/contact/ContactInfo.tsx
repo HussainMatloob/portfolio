@@ -31,10 +31,8 @@ export default function ContactInfo() {
                     </p>
 
                     <a
-                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personal.email}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="break-all text-base font-semibold sm:text-lg hover:text-blue-400"
+                        href={`mailto:${personal.email}`}
+                        className="break-all text-base font-semibold transition-colors hover:text-blue-400 sm:text-lg"
                     >
                         {personal.email}
                     </a>
@@ -78,20 +76,18 @@ export default function ContactInfo() {
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 
                 <a
-                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personal.email}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${personal.email}?subject=Project Inquiry`}
                     className="
-flex
-justify-center
-rounded-xl
-bg-blue-600
-px-6
-py-3
-font-semibold
-transition
-hover:bg-blue-700
-"
+        flex
+        justify-center
+        rounded-xl
+        bg-blue-600
+        px-6
+        py-3
+        font-semibold
+        transition
+        hover:bg-blue-700
+    "
                 >
                     Email Me
                 </a>
