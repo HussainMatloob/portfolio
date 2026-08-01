@@ -49,7 +49,8 @@ export const projects: Project[] = [
         screenshots: [
             "/images/projects/snooker/1.png",
             "/images/projects/snooker/2.png",
-            "/images/projects/snooker/3.png"
+            "/images/projects/snooker/3.png",
+            "/images/projects/snooker/4.png"
         ],
 
         links: [
@@ -108,51 +109,9 @@ export const projects: Project[] = [
 
     },
 
+
     {
         id: 3,
-
-        featured: false,
-        device: "mobile",
-        title: "Storage Cleaner",
-
-        category: "Production App",
-
-        role: "Founder • Flutter Developer",
-
-        shortDescription:
-            "A powerful storage management application that scans, analyzes, and removes unnecessary files to optimize device performance.",
-
-        technologies: [
-            "Flutter",
-            "GetX",
-            "File System",
-            "Isolates",
-            "AdMob"
-        ],
-
-        image: "/images/projects/storageCleaner/1.png",
-
-        screenshots: [
-            "/images/projects/storageCleaner/1.png",
-            "/images/projects/storageCleaner/2.png",
-            "/images/projects/storageCleaner/3.png"
-        ],
-        links: [
-            {
-                title: "Play Store",
-                type: "playstore",
-                url: "https://play.google.com/store/apps/details?id=com.hmtech.filescanner",
-            }
-        ],
-
-
-
-
-
-
-    },
-    {
-        id: 4,
 
         featured: false,
         device: "mobile",
@@ -188,9 +147,44 @@ export const projects: Project[] = [
             }
         ],
 
+    },
 
+    {
+        id: 4,
 
+        featured: false,
+        device: "mobile",
+        title: "Storage Cleaner",
 
+        category: "Production App",
+
+        role: "Founder • Flutter Developer",
+
+        shortDescription:
+            "A powerful storage management application that scans, analyzes, and removes unnecessary files to optimize device performance.",
+
+        technologies: [
+            "Flutter",
+            "GetX",
+            "File System",
+            "Isolates",
+            "AdMob"
+        ],
+
+        image: "/images/projects/storageCleaner/1.png",
+
+        screenshots: [
+            "/images/projects/storageCleaner/1.png",
+            "/images/projects/storageCleaner/2.png",
+            "/images/projects/storageCleaner/3.png"
+        ],
+        links: [
+            {
+                title: "Play Store",
+                type: "playstore",
+                url: "https://play.google.com/store/apps/details?id=com.hmtech.filescanner",
+            }
+        ],
 
     },
     {

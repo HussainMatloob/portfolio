@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ["IP"],
+  allowedDevOrigins: [""],
   devIndicators: false,
   output: "export",
   images: {
