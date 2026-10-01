@@ -17,7 +17,7 @@ export default function ProjectsGrid() {
                 </h2>
 
                 <p className="mt-4 max-w-2xl text-lg text-gray-400">
-                    Cross-platform Flutter applications built for startups and businesses across finance, safety, booking, social networking, trading, food delivery, and business management.
+                    Cross-platform Flutter applications built for startups and businesses across finance, safety, booking, social networking, trading, food delivery, and business management. Also developed an AI-powered WhatsApp Business Assistant that helps businesses automate customer conversations, handle inquiries, and streamline their WhatsApp communication.
                 </p>
 
             </div>

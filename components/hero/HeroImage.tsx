@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { personal } from "@/data/personal";
+import Image from "next/image";
 import FloatingCards from "./FloatingCards";
 
 export default function HeroImage() {

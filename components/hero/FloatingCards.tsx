@@ -1,23 +1,23 @@
 "use client";
 
 import {
-    SiFlutter,
+    SiFastapi,
     SiFirebase,
+    SiFlutter,
     SiLaravel,
-    SiSupabase,
-    SiPython
+    SiSupabase
 } from "react-icons/si";
 
 const technologies = [
     {
         title: "Flutter",
         icon: <SiFlutter size={18} />,
-        className: "left-12 top-14",
+        className: "left-12 top-16",
     },
     {
         title: "Firebase",
         icon: <SiFirebase size={18} />,
-        className: "right-12 top-24",
+        className: "right-2 top-21",
     },
     {
         title: "Laravel",
@@ -27,8 +27,13 @@ const technologies = [
     {
         title: "Supabase",
         icon: <SiSupabase size={18} />,
-        className: "right-0 bottom-20",
+        className: "right-0 bottom-21",
     },
+    {
+        title: "FastAPI",
+        icon: <SiFastapi size={18} />,
+        className: "-left-16 bottom-78",
+    }
 
 ];
 

@@ -1,14 +1,12 @@
 import {
-    FaMoneyBillWave,
-} from "react-icons/fa";
-import {
-    FaMobileAlt,
-    FaServer,
-    FaDatabase,
-    FaPlug,
-    FaTools,
     FaCloudUploadAlt,
+    FaDatabase,
     FaFire,
+    FaMobileAlt,
+    FaMoneyBillWave,
+    FaPlug,
+    FaServer,
+    FaTools,
 } from "react-icons/fa";
 
 export type Service = {
@@ -40,12 +38,13 @@ export const services: Service[] = [
         title: "Backend & API Development",
 
         description:
-            "Develop secure backend systems, REST APIs, authentication, and business logic using Laravel, Firebase, and Supabase.",
+            "Develop secure backend systems, REST APIs, authentication, and business logic using Laravel, FastAPI, Firebase, and Supabase.",
 
         icon: FaServer,
 
         technologies: [
             "Laravel",
+            "FastAPI",
             "REST API",
             "Firebase",
             "Supabase",

@@ -23,6 +23,7 @@ export const skills = [
         icon: "⚙️",
         items: [
             "Laravel",
+            "FastAPI",
             "REST API Development",
             "CRUD API Development",
             "Authentication APIs",
@@ -91,21 +92,10 @@ export const skills = [
         icon: "💻",
         items: [
             "Dart",
+            "Python",
+            "Java",
             "SQL",
-            "Java"
+
         ]
     },
-
-    {
-        title: "Currently Expanding",
-        icon: "🧠",
-        items: [
-            "Python",
-            "FastAPI",
-            "AI API Integration",
-            "LLMs",
-            "Prompt Engineering",
-            "Stripe Payment Gateway (Practice Projects)"
-        ]
-    }
 ];

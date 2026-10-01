@@ -1,10 +1,10 @@
 "use client";
 
 import {
-    FaMobileAlt,
     FaCode,
-    FaServer,
     FaGlobeAsia,
+    FaMobileAlt,
+    FaServer,
 } from "react-icons/fa";
 
 const cards = [
@@ -21,7 +21,8 @@ const cards = [
     {
         icon: <FaServer size={28} />,
         title: "Backend APIs",
-        value: "Laravel & MySQL",
+        value: "Laravel & MySQL\nFastAPI & PostgreSQL",
+
     },
     {
         icon: <FaGlobeAsia size={28} />,
@@ -48,9 +49,7 @@ export default function AboutCards() {
                         {card.title}
                     </h3>
 
-                    <p className="mt-3 text-gray-400">
-                        {card.value}
-                    </p>
+                    <p className="mt-3 whitespace-pre-line text-gray-400"> {card.value} </p>
 
                 </div>
             ))}

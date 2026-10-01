@@ -7,7 +7,7 @@ export type Project = {
     id: number;
     featured: boolean;
     title: string;
-    category: "Featured" | "Production App" | "Professional Contribution" | "Business Management SaaS";
+    category: "Featured" | "Production App" | "Professional Contribution" | "Business Management SaaS" | "Personal Project" | "SaaS MVP";
     role: string;
     shortDescription: string;
     description?: string;
@@ -399,6 +399,43 @@ export const projects: Project[] = [
                 type: "apk",
                 url: "https://drive.google.com/file/d/1N1ZD6Q85PWiHspFY1xjetrMVvJaM4FV4/view?usp=sharing"
             }
+        ],
+
+
+    },
+    {
+        id: 10,
+
+        featured: false,
+        device: "mobile",
+        title: " ConvoPilot",
+
+        category: "SaaS MVP",
+
+        role: "Founder • Flutter Developer",
+
+        shortDescription:
+            "ConvoPilot is an AI-powered WhatsApp Business Assistant that helps businesses automate customer conversations, respond to inquiries, and provide intelligent AI-powered responses through WhatsApp.",
+
+        technologies: [
+            "Flutter",
+            "FastAPI",
+            "OpenAI",
+            "Bloc"
+        ],
+
+        image: "/images/projects/convoPilot/1.jpg",
+
+        screenshots: [
+            "/images/projects/convoPilot/1.jpg",
+            "/images/projects/convoPilot/2.jpg",
+            "/images/projects/convoPilot/3.jpg"
+        ],
+
+
+        links: [
+
+
         ],
 
 

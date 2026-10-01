@@ -4,7 +4,7 @@ export const personal = {
     title: "Full Stack Flutter Engineer",
 
     shortDescription:
-        "I help startups and businesses build production-ready mobile applications using Flutter, Laravel, Firebase, and Supabase. From scalable backend APIs to polished user experiences, I deliver clean, maintainable, and high-performance software solutions.",
+        "I help startups and businesses build production-ready mobile applications using Flutter, Laravel, FastAPI, Firebase, and Supabase. From scalable backend APIs to polished user experiences, I deliver clean, maintainable, and high-performance software solutions.",
 
     experience: "2.5+",
 

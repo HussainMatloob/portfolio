@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { navLinks } from "./navLinks";
 import MobileMenu from "./MobileMenu";
+import { navLinks } from "./navLinks";
 
 
 export default function Navbar() {
